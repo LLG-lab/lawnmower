@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+// Message from Agent to Client.
+message ProtoAgentMessage {
+    optional bytes videoFrame = 1;
+    optional double  steeringWheelPotentiometer = 2; // Current wheel steering status on the device.
+    optional double  accelerationPedalPotentiometer = 3; // Curent state of pressing the gas pedal on the device.
+}
+
+message ProtoClientMessage {
+    optional double  steeringWheelReq = 1; // Wheel steering position requested by operator.
+    optional double  accelerationPedalReq = 2; // Pressing the gas pedal requested by operator.
+}
